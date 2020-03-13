@@ -1,0 +1,17 @@
+{
+  "name": "csv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently yarn:start:*"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.1",
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.8.3"
+  }
+}
