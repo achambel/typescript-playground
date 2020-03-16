@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var MatchReader_1 = require("./MatchReader");
+var ConsoleReport_1 = require("./reportTargets/ConsoleReport");
+var WinsAnalysis_1 = require("./analyzers/WinsAnalysis");
+var Summary_1 = require("./Summary");
+var matchReader = MatchReader_1.MatchReader.fromCsv('football.csv');
+matchReader.load();
+var consoleReport = new Summary_1.Summary(new WinsAnalysis_1.WinsAnalysis('Bournemouth'), new ConsoleReport_1.ConsoleReport());
+consoleReport.buildAndPrintReport(matchReader.matches);
+var htmlReport = Summary_1.Summary.winsAnalysisWithHtmlReport('Man United');
+htmlReport.buildAndPrintReport(matchReader.matches);
